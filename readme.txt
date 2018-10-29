@@ -15,10 +15,9 @@ RESULTS
     ~7% Openstack faster than my macbook
 - Disk IO:
     results are not clear, might be influenced by many factors
-    writing seems slow in Openshift and very slow in Openstack
-    reading seems very slow in Openshift and very fast in Openstack
-    note: attaching proper volume types might change the performance entirely
+    reading and writing seems slow in Openshift and very slow in Openstack
+    note: attaching proper volume types to Openstack might change the performance entirely
 
 INTERPRETATION
 Openshift seems good for light weight apps network-bound
-Openstack seems better for cpu-bound apps (and maybe for disk-bound as there are a few volumes types options)
+Openstack seems better for cpu-bound apps (and maybe for disk-bound with a proper volume type)
