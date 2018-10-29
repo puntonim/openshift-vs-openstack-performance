@@ -1,0 +1,11 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+turtle321        4G   649  99 77161  14 78075  11  1961  99 1188254  99  6331  60
+Latency             24182us     897ms    1676ms    4627us     622us     202us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+turtle321           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              1046us     383us     518us    1919us      22us    6807us
+1.97,1.97,turtle321,1,1540740522,4G,,649,99,77161,14,78075,11,1961,99,1188254,99,6331,60,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,24182us,897ms,1676ms,4627us,622us,202us,1046us,383us,518us,1919us,22us,6807us

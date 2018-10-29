@@ -1,0 +1,18 @@
+ubuntu@turtle321:~/performance$ sudo hdparm -Tt /dev/vda1
+sudo hdparm -Tt /dev/vda1
+
+/dev/vda1:
+ Timing cached reads:   15058 MB in  1.99 seconds = 7550.75 MB/sec
+ Timing buffered disk reads: 126 MB in  3.03 seconds =  41.55 MB/sec
+
+ubuntu@turtle321:~/performance$ sudo hdparm -Tt /dev/vda1
+
+/dev/vda1:
+ Timing cached reads:   17402 MB in  1.99 seconds = 8727.95 MB/sec
+ Timing buffered disk reads: 162 MB in  3.03 seconds =  53.52 MB/sec
+
+ubuntu@turtle321:~/performance$ sudo hdparm -Tt /dev/vda1
+
+/dev/vda1:
+ Timing cached reads:   16998 MB in  1.99 seconds = 8525.09 MB/sec
+ Timing buffered disk reads: 178 MB in  3.18 seconds =  56.01 MB/sec

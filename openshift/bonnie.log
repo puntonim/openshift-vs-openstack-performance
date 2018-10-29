@@ -1,0 +1,11 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+trt-9-pcrdw      4G   477  99 317874  75 264559  43  1429  99 2157337  99  7395 146
+Latency             18451us     865ms   98364us   10876us   10250us   14842us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+trt-9-pcrdw         -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 26598  87 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              1409us     213us     970us    1233us      30us   12773us
+1.97,1.97,trt-9-pcrdw,1,1540746777,4G,,477,99,317874,75,264559,43,1429,99,2157337,99,7395,146,16,,,,,26598,87,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,18451us,865ms,98364us,10876us,10250us,14842us,1409us,213us,970us,1233us,30us,12773us

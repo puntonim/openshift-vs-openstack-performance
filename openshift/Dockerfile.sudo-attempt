@@ -1,0 +1,34 @@
+# Monday 2018.10.29 00:20:18
+# This is an attempt to get root priviledge on a Openshift container.
+# IT FAILED! It's not possible, the setuid command failes due to Openshift permissions.
+# Openshift permission could be only changed by an admin.
+
+FROM ubuntu:latest
+
+RUN apt-get update && \
+    apt-get install -y sudo openssh-server python && \
+    # The password is password123.
+    useradd -m -u 1007 -p 'sa3tHJ3/KuYvI' -G sudo paolo
+
+RUN echo "you  ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/paolo
+RUN echo "paolo  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/paolo
+RUN mkdir /var/run/sshd
+
+EXPOSE 22
+
+# Openshift opens a fake terminal. A proper terminal is required in order
+# to run `su`.
+# `python /tmp/openshell.py` opens a regular shell.
+RUN echo "import pty; pty.spawn('/bin/bash')" > /tmp/openshell.py
+ENV TERM xterm
+
+# Openstack runs container with user guid=1004860000.
+# Adding a user with this uid is impossible.
+#RUN useradd -m -u 1004860000 -p 'sa3tHJ3/KuYvI' -G sudo paolo
+
+# To avoid the error "su: Cannot determine your user name.".
+RUN echo "you:x:1004860000:1000::/home/paolo:/bin/sh" >> /etc/passwd
+
+USER 1001
+CMD sudo /usr/sbin/sshd && watch ls
+# CMD watch ls

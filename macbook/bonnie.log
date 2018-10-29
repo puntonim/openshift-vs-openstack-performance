@@ -1,0 +1,11 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+mac             4G   216  98 714982  90 771912  88   855  99 3051978  96 +++++ +++
+Latency             42928us   19877us    6389us   14472us    9315us    1069us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+mac                 -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 10786  69 +++++ +++ 11635  89 16485  88 +++++ +++ 11064  84
+Latency              4450us     503us    2322us    3617us     328us    3139us
+1.97,1.97,mac,1,1540738503,4G,,216,98,714982,90,771912,88,855,99,3051978,96,+++++,+++,16,,,,,10786,69,+++++,+++,11635,89,16485,88,+++++,+++,11064,84,42928us,19877us,6389us,14472us,9315us,1069us,4450us,503us,2322us,3617us,328us,3139us

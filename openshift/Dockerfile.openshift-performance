@@ -1,0 +1,26 @@
+# Monday 2018.10.29 00:20:18
+
+FROM python:latest
+
+RUN apt-get update && \
+    apt-get install -y bonnie++ && \
+    pip install -U "pip>=18.0" && \
+    pip install virtualenv speedtest-cli performance
+
+ENV TERM xterm
+
+# Store the logs in /performance.
+RUN mkdir /performance
+RUN chmod a+rw /performance
+# `performance` software requires a venv dir.
+RUN mkdir /venv
+RUN chmod a+rw /venv
+
+COPY go.sh /performance/go.sh
+COPY monkeytest.py /performance/monkeytest.py
+
+# Required by Openshift.
+USER 1001
+
+# Run the script and then just keep running a watch.
+CMD /performance/go.sh && watch ls
